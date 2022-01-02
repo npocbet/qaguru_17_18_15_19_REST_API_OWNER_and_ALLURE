@@ -1,19 +1,38 @@
 plugins {
-    id 'java'
+    id 'java-library'
 }
 
-group 'org.example'
-version '1.0-SNAPSHOT'
+//group 'org.example'
+//version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
 }
 
+def junitVersion = "5.8.2"
+
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    testImplementation(
+            "io.rest-assured:rest-assured:4.4.0",
+            "org.assertj:assertj-core:3.21.0",
+            "org.junit.jupiter:junit-jupiter-api:$junitVersion")
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
 }
 
-test {
+
+tasks.withType(JavaCompile){
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(Test) {
+    systemProperties(System.getProperties())
     useJUnitPlatform()
+
+    testLogging {
+        lifecycle {
+//            events "started", "failed"
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
 }
