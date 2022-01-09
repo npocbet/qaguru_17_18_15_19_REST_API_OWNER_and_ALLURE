@@ -2,6 +2,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Cookie;
@@ -14,12 +15,16 @@ import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.hamcrest.Matchers.is;
 
-public class DemoWebShopTests {
+public class DemoWebShopTestsHW18 {
+
+    @BeforeAll
+    static void setUp() {
+        RestAssured.baseURI = "http://demowebshop.tricentis.com";
+        Configuration.baseUrl = "http://demowebshop.tricentis.com";
+    }
 
     @Test
     void addToWishlistTest() {
-        RestAssured.baseURI = "http://demowebshop.tricentis.com";
-        Configuration.baseUrl = "http://demowebshop.tricentis.com";
         String cookie = given()
                 .contentType("application/x-www-form-urlencoded")
                 .formParam("Email", "npocbet@gmail.com")
