@@ -26,7 +26,8 @@ public class DemoWebShopTestsHW19Allure extends TestBase{
     void addToWishlistTestLocalWithListener() {
 
         APIConfig apiConfig = ConfigFactory.create(APIConfig.class, System.getProperties());
-
+        Configuration.browser = apiConfig.getBrowser();
+        Configuration.browserVersion = apiConfig.getBrowserVersion();
         RestAssured.baseURI = apiConfig.getBaseUrl(); //"http://demowebshop.tricentis.com";
         Configuration.baseUrl = apiConfig.getBaseUrl(); //"http://demowebshop.tricentis.com";
 
@@ -68,15 +69,16 @@ public class DemoWebShopTestsHW19Allure extends TestBase{
             $(".page-body").shouldHave(Condition.text("$5 Virtual Gift Card"));
         });
     }
+
     @Test
     @Tag("hw19")
     void addToWishlistTestLocalWithTemplates() {
-
-
         APIConfig apiConfig = ConfigFactory.create(APIConfig.class, System.getProperties());
-
+        Configuration.browser = apiConfig.getBrowser();
+        Configuration.browserVersion = apiConfig.getBrowserVersion();
         RestAssured.baseURI = apiConfig.getBaseUrl(); //"http://demowebshop.tricentis.com";
         Configuration.baseUrl = apiConfig.getBaseUrl(); //"http://demowebshop.tricentis.com";
+
 
         step("Get cookie", () -> {
             cookie = given()

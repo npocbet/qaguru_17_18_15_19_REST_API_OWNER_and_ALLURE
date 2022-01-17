@@ -3,8 +3,10 @@ import com.codeborne.selenide.Selenide;
 import config.APIConfig;
 import helpers.AllureAttachments;
 import io.qameta.allure.junit5.AllureJunit5;
+import io.restassured.RestAssured;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 
@@ -14,10 +16,8 @@ public class TestBase {
 
     @AfterEach
     public void addAttachments() {
-        APIConfig apiConfig = ConfigFactory.create(APIConfig.class, System.getProperties());
 
-        Configuration.browser = apiConfig.getBrowser();
-        Configuration.browserVersion = apiConfig.getBrowserVersion();
+
 
         AllureAttachments.addScreenshotAs("Last screenshot");
         AllureAttachments.addPageSource();
