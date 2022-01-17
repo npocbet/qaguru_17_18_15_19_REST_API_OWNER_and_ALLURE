@@ -5,6 +5,7 @@ import filters.CustomLogFilter;
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import org.aeonbits.owner.ConfigFactory;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Cookie;
 
@@ -21,6 +22,7 @@ public class DemoWebShopTestsHW19Allure extends TestBase{
     public String cookie;
 
     @Test
+    @Tag("hw19")
     void addToWishlistTestLocalWithListener() {
 
         APIConfig apiConfig = ConfigFactory.create(APIConfig.class, System.getProperties());
@@ -67,6 +69,7 @@ public class DemoWebShopTestsHW19Allure extends TestBase{
         });
     }
     @Test
+    @Tag("hw19")
     void addToWishlistTestLocalWithTemplates() {
 
 
