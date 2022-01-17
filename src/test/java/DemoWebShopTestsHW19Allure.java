@@ -16,7 +16,7 @@ import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;
 
-public class DemoWebShopTestsHW19Allure {
+public class DemoWebShopTestsHW19Allure extends TestBase{
 
     public String cookie;
 

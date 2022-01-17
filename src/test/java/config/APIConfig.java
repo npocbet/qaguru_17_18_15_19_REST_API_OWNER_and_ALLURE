@@ -17,4 +17,13 @@ public interface APIConfig extends Config {
 
     @Key("password")
     String getPassword();
+
+    @Key("browser")
+    @DefaultValue("chrome")
+    String getBrowser();
+
+    @Key("browserVersion")
+    @DefaultValue("96.0")
+    String getBrowserVersion();
+
 }
