@@ -23,13 +23,14 @@ allure {
 
 dependencies {
     testImplementation(
+            "org.aspectj:aspectjweaver:1.9.6",
             "io.rest-assured:rest-assured:4.4.0",
             "org.assertj:assertj-core:3.21.0",
             "org.junit.jupiter:junit-jupiter-api:$junitVersion",
             "com.codeborne:selenide:$selenideVersion",
             "io.qameta.allure:allure-selenide:$allureVersion",
             "io.qameta.allure:allure-rest-assured:$allureVersion",
-            "org.junit.jupiter:junit-jupiter-api:$junitVersion",
+            "org.junit.jupiter:junit-jupiter:$junitVersion",
             'org.aeonbits.owner:owner:1.0.12')
 
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
