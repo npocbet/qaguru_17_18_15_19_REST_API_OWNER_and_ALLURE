@@ -1,10 +1,6 @@
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Configuration;
-import config.APIConfig;
 import filters.CustomLogFilter;
 import io.qameta.allure.restassured.AllureRestAssured;
-import io.restassured.RestAssured;
-import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Cookie;
@@ -68,12 +64,6 @@ public class DemoWebShopTestsHW19Allure extends TestBase{
     @Test
     @Tag("hw19")
     void addToWishlistTestLocalWithTemplates() {
-        APIConfig apiConfig = ConfigFactory.create(APIConfig.class, System.getProperties());
-        Configuration.browser = apiConfig.getBrowser();
-        Configuration.browserVersion = apiConfig.getBrowserVersion();
-        RestAssured.baseURI = apiConfig.getBaseUrl(); //"http://demowebshop.tricentis.com";
-        Configuration.baseUrl = apiConfig.getBaseUrl(); //"http://demowebshop.tricentis.com";
-
 
         step("Get cookie", () -> {
             cookie = given()
