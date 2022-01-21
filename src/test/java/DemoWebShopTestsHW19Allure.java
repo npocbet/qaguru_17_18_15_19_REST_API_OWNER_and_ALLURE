@@ -20,8 +20,6 @@ public class DemoWebShopTestsHW19Allure extends TestBase{
     @Tag("hw19")
     void addToWishlistTestLocalWithListener() {
 
-        //APIConfig apiConfig = ConfigFactory.create(APIConfig.class, System.getProperties());
-
         String cookie = given()
                 .contentType("application/x-www-form-urlencoded")
                 .formParam("Email", apiConfig.getLogin()) // "npocbet@gmail.com"

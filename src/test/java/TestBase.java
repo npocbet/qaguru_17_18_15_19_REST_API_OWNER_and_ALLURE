@@ -9,8 +9,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-import static com.codeborne.selenide.Selenide.open;
-
 
 @ExtendWith({AllureJunit5.class})
 public class TestBase {
@@ -25,7 +23,7 @@ public class TestBase {
         RestAssured.baseURI = apiConfig.getBaseUrl(); //"http://demowebshop.tricentis.com";
         Configuration.baseUrl = apiConfig.getBaseUrl(); //"http://demowebshop.tricentis.com";
 
-        open("/content/images/thumbs/0000015_25-virtual-gift-card_300.jpeg");
+       // open("/content/images/thumbs/0000015_25-virtual-gift-card_300.jpeg");
     }
 
 
