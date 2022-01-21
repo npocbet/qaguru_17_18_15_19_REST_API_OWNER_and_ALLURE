@@ -19,7 +19,7 @@ public interface APIConfig extends Config {
     String getPassword();
 
     @Key("browser")
-    @DefaultValue("firefox")
+    @DefaultValue("chrome")
     String getBrowser();
 
     @Key("browserVersion")
