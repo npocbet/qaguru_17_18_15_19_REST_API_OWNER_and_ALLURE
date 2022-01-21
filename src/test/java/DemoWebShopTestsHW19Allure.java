@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Cookie;
 
-
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
@@ -25,11 +24,7 @@ public class DemoWebShopTestsHW19Allure extends TestBase{
     @Tag("hw19")
     void addToWishlistTestLocalWithListener() {
 
-        APIConfig apiConfig = ConfigFactory.create(APIConfig.class, System.getProperties());
-        Configuration.browser = apiConfig.getBrowser();
-        Configuration.browserVersion = apiConfig.getBrowserVersion();
-        RestAssured.baseURI = apiConfig.getBaseUrl(); //"http://demowebshop.tricentis.com";
-        Configuration.baseUrl = apiConfig.getBaseUrl(); //"http://demowebshop.tricentis.com";
+        //APIConfig apiConfig = ConfigFactory.create(APIConfig.class, System.getProperties());
 
         String cookie = given()
                 .contentType("application/x-www-form-urlencoded")
