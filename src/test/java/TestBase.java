@@ -26,7 +26,7 @@ public class TestBase {
         Configuration.baseUrl = apiConfig.getBaseUrl(); //"http://demowebshop.tricentis.com";
 
         if (!apiConfig.getRemoteDriverUrl().equals("")) {
-            Configuration.remote = apiConfig.getBaseUrl();
+            Configuration.remote = apiConfig.getRemoteDriverUrl();
         }
 
        // open("/content/images/thumbs/0000015_25-virtual-gift-card_300.jpeg");

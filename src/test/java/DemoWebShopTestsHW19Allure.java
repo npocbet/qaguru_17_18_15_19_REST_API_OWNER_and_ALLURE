@@ -42,16 +42,16 @@ public class DemoWebShopTestsHW19Allure extends TestBase{
                 .when()
                 .log().uri()
                 .log().headers()
-                .post("http://demowebshop.tricentis.com/addproducttocart/details/1/2")
+                .post("/addproducttocart/details/1/2")
                 .then()
                 .log().body()
                 .statusCode(200)
                 .body("success", is(true));
 
         step("Open wishlist", () -> {
-            open("http://demowebshop.tricentis.com/");
+            open("/");
             getWebDriver().manage().addCookie(new Cookie("NOPCOMMERCE.AUTH", cookie));
-            open("http://demowebshop.tricentis.com/wishlist");
+            open("/wishlist");
         });
 
         step("check there is and item in the wishlist", () -> {
@@ -88,7 +88,7 @@ public class DemoWebShopTestsHW19Allure extends TestBase{
                 .when()
                 .log().uri()
                 .log().headers()
-                .post("http://demowebshop.tricentis.com/addproducttocart/details/1/2")
+                .post("/addproducttocart/details/1/2")
                 .then()
                 .log().body()
                 .statusCode(200)
@@ -96,9 +96,9 @@ public class DemoWebShopTestsHW19Allure extends TestBase{
         });
 
         step("Open wishlist", () -> {
-            open("http://demowebshop.tricentis.com/");
+            open("/");
             getWebDriver().manage().addCookie(new Cookie("NOPCOMMERCE.AUTH", cookie));
-            open("http://demowebshop.tricentis.com/wishlist");
+            open("/wishlist");
         });
 
         step("check there is and item in the wishlist", () -> {
