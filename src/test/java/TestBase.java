@@ -9,6 +9,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.extension.ExtendWith;
 
+import java.util.Objects;
+
 
 @ExtendWith({AllureJunit5.class})
 public class TestBase {
@@ -22,6 +24,10 @@ public class TestBase {
         Configuration.browserVersion = apiConfig.getBrowserVersion();
         RestAssured.baseURI = apiConfig.getBaseUrl(); //"http://demowebshop.tricentis.com";
         Configuration.baseUrl = apiConfig.getBaseUrl(); //"http://demowebshop.tricentis.com";
+
+        if (!apiConfig.getRemoteDriverUrl().equals("")) {
+            Configuration.remote = apiConfig.getBaseUrl();
+        }
 
        // open("/content/images/thumbs/0000015_25-virtual-gift-card_300.jpeg");
     }

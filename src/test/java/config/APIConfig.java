@@ -26,4 +26,7 @@ public interface APIConfig extends Config {
     @DefaultValue("96.0")
     String getBrowserVersion();
 
+    @Key("remoteDriverUrl")
+    String getRemoteDriverUrl();
+
 }
