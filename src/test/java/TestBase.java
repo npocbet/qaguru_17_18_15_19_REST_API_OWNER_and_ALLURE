@@ -17,23 +17,7 @@ public class TestBase {
     @BeforeAll
     public static void setUp() {
 
-
-        Configuration.browser = apiConfig.getBrowser();
-        Configuration.browserVersion = apiConfig.getBrowserVersion();
-        RestAssured.baseURI = apiConfig.getBaseUrl(); //"http://demowebshop.tricentis.com";
-        Configuration.baseUrl = apiConfig.getBaseUrl(); //"http://demowebshop.tricentis.com";
-
-       // open("/content/images/thumbs/0000015_25-virtual-gift-card_300.jpeg");
-    }
-
-
-    @AfterEach
-    public void addAttachments() {
-
-        AllureAttachments.addScreenshotAs("Last screenshot");
-        AllureAttachments.addPageSource();
-
-        Selenide.closeWebDriver();
+       RestAssured.baseURI = apiConfig.getBaseUrl();
 
     }
 }
