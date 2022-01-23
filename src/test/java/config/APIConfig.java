@@ -2,9 +2,11 @@ package config;
 
 import org.aeonbits.owner.Config;
 
+@Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
-        "file:/tmp/auth.properties",
-        "classpath:auth.properties"
+        "system:properties",
+        "classpath:config/local.properties",
+        "classpath:config/remote.properties"
 })
 public interface APIConfig extends Config {
 
